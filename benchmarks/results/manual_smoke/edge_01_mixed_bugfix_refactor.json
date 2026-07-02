@@ -1,0 +1,10 @@
+{
+  "change_type": "feature",
+  "summary": "Added a private _subtotal method to calculate the subtotal of items and refactored the calculate method to use this new method. Also updated the apply_discount method to divide the discount percentage by 100 before applying it.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Test that calculate returns the correct total with a list of items, tax rate, and discount applied",
+    "Test that _subtotal correctly calculates the subtotal for a given list of items",
+    "Test that apply_discount correctly applies a percentage discount to the total"
+  ]
+}

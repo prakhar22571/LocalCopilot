@@ -1,0 +1,10 @@
+{
+  "change_type": "feature",
+  "summary": "Added a check for the /public path to allow requests without an Authorization header, and allowed decoding with both HS256 and none algorithms.",
+  "risk_level": "medium",
+  "suggested_tests": [
+    "Test that requests to paths starting with /public succeed even if no token is provided.",
+    "Test that requests to protected paths require a valid token in the Authorization header.",
+    "Test that tokens decoded using both HS256 and none algorithms are accepted without raising an exception."
+  ]
+}

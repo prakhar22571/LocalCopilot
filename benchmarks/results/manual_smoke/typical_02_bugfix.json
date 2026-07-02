@@ -1,0 +1,9 @@
+{
+  "change_type": "bugfix",
+  "summary": "Corrected the calculation of the `end` index in the `paginate` function to use `start + page_size` instead of `start + page_size - 1`, ensuring that all items up to the end index are included.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Test with a page number and page size where the last item is exactly at the end index, e.g., page=2, page_size=3 for an input list of [1, 2, 3, 4, 5]. Verify that the function returns [3, 4, 5].",
+    "Test with a page number and page size where there are no items at the end index, e.g., page=1, page_size=10 for an input list of [1, 2, 3]. Verify that the function returns [1, 2, 3]."
+  ]
+}

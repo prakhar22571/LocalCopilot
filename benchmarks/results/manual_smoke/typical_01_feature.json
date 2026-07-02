@@ -1,0 +1,10 @@
+{
+  "change_type": "feature",
+  "summary": "Added a new endpoint /users/{user_id}/orders that retrieves all orders for the specified user, including error handling for non-existent users.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Verify that calling get_user_orders with a valid user_id returns a JSON response containing the correct user_id and an array of order objects.",
+    "Test the scenario where the provided user_id does not exist in the database, ensuring that an HTTP 404 error is raised with the appropriate detail message.",
+    "Check that the endpoint correctly retrieves all orders associated with the specified user from the Order table."
+  ]
+}

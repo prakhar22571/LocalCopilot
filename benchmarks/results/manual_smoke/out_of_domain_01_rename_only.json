@@ -1,0 +1,6 @@
+{
+  "change_type": "refactor",
+  "summary": "Renamed module from 'app/utils/strings.py' to 'app/utils/text.py'. No functional changes were made.",
+  "risk_level": "low",
+  "suggested_tests": []
+}

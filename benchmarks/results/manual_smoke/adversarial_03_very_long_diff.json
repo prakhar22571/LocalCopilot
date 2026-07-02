@@ -1,0 +1,10 @@
+{
+  "change_type": "refactor",
+  "summary": "Updated Python logging statements to use the newer f-string formatting style, replacing positional arguments with a formatted string.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Verify that all logger.info calls now correctly format the request.id without raising errors.",
+    "Check that the output of logger.info matches the expected pattern 'handling request <request.id>' for several sample requests.",
+    "Ensure that no other parts of the codebase were inadvertently changed by this diff."
+  ]
+}

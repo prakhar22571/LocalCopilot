@@ -1,0 +1,10 @@
+{
+  "change_type": "refactor",
+  "summary": "Refactored the monthly_report and yearly_report functions to use a new helper function _safe_average for calculating averages. Replaced manual summation loops with built-in sum() and simplified average calculation logic.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Verify that monthly_report returns correct total and average when given valid records",
+    "Check behavior when records is an empty list (average should be 0)",
+    "Ensure yearly_report works similarly to monthly_report with the new implementation"
+  ]
+}

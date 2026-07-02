@@ -1,0 +1,10 @@
+{
+  "change_type": "config",
+  "summary": "Changed the condition for deploying to production from checking if the branch is main to always running the deployment job.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Verify that the deploy.sh script runs successfully when triggered by any workflow event.",
+    "Check that the --env=production flag correctly sets the environment variables for production deployments.",
+    "Ensure that deploying to production does not accidentally overwrite or corrupt existing production data."
+  ]
+}

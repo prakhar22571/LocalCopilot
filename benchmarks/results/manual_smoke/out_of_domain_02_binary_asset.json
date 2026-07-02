@@ -1,0 +1,9 @@
+{
+  "change_type": "other",
+  "summary": "The static logo file was replaced with a new version.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Verify that the new logo image is in the correct format and size.",
+    "Check if the new logo displays correctly on the application's homepage or relevant pages."
+  ]
+}

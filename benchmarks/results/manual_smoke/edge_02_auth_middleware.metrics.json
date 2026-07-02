@@ -1,0 +1,13 @@
+{
+  "model": "granite4:3b",
+  "wall_clock_seconds": 15.633981699997094,
+  "time_to_first_token_seconds": 1.560628799983533,
+  "total_duration_ns": 15617736800,
+  "load_duration_ns": 198797500,
+  "prompt_eval_count": 342,
+  "prompt_eval_duration_ns": 1288445900,
+  "eval_count": 116,
+  "eval_duration_ns": 3620791300,
+  "tokens_per_second": 32.037195847217156,
+  "retries": 0
+}

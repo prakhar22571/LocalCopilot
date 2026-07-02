@@ -1,0 +1,10 @@
+{
+  "change_type": "other",
+  "summary": "Updated the normalize function to use a non-breaking space (U+00A0) instead of a regular space, but otherwise behaves the same.",
+  "risk_level": "low",
+  "suggested_tests": [
+    "Verify that `normalize('Hello World')` returns 'hello world' and not 'helloworld'",
+    "Check that `slugify('Hello World')` produces 'hello-world'",
+    "Ensure no other parts of the codebase are using this function in a way that would be affected by the change"
+  ]
+}
