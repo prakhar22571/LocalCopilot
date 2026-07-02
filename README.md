@@ -72,6 +72,24 @@ curl -X POST http://localhost:8000/review \
   -d '{"diff": "diff --git a/x.py b/x.py\n...", "model": "granite4:3b"}'
 ```
 
+### Reviewing diffs from other repos
+
+With the API server running, any repo on the machine can be reviewed without activating this
+project's venv — the server holds the only dependency on this codebase. `scripts/review-diff.ps1`
+wraps the HTTP call:
+
+```powershell
+# Working-tree diff of whatever repo you're standing in
+C:\Users\nikhi\development\LocalCopilot\scripts\review-diff.ps1
+
+# A specific repo and ref, or staged changes, or a different model
+.\scripts\review-diff.ps1 -Repo C:\dev\some-repo -GitRef HEAD~1
+.\scripts\review-diff.ps1 -Staged -Model mistral:7b
+```
+
+The same endpoint works from git hooks or CI on this machine — POST the diff, then gate on
+`review.risk_level` in the JSON response.
+
 ## Project structure
 
 ```
