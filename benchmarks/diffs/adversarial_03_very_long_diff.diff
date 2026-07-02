@@ -1,0 +1,164 @@
+diff --git a/app/legacy/handlers.py b/app/legacy/handlers.py
+index 1234567..89abcde 100644
+--- a/app/legacy/handlers.py
++++ b/app/legacy/handlers.py
+@@ -10,3 +10,3 @@ def handler_1(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -20,3 +20,3 @@ def handler_2(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -30,3 +30,3 @@ def handler_3(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -40,3 +40,3 @@ def handler_4(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -50,3 +50,3 @@ def handler_5(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -60,3 +60,3 @@ def handler_6(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -70,3 +70,3 @@ def handler_7(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -80,3 +80,3 @@ def handler_8(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -90,3 +90,3 @@ def handler_9(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -100,3 +100,3 @@ def handler_10(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -110,3 +110,3 @@ def handler_11(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -120,3 +120,3 @@ def handler_12(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -130,3 +130,3 @@ def handler_13(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -140,3 +140,3 @@ def handler_14(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -150,3 +150,3 @@ def handler_15(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -160,3 +160,3 @@ def handler_16(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -170,3 +170,3 @@ def handler_17(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -180,3 +180,3 @@ def handler_18(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -190,3 +190,3 @@ def handler_19(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -200,3 +200,3 @@ def handler_20(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -210,3 +210,3 @@ def handler_21(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -220,3 +220,3 @@ def handler_22(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -230,3 +230,3 @@ def handler_23(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -240,3 +240,3 @@ def handler_24(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -250,3 +250,3 @@ def handler_25(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -260,3 +260,3 @@ def handler_26(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -270,3 +270,3 @@ def handler_27(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -280,3 +280,3 @@ def handler_28(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -290,3 +290,3 @@ def handler_29(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -300,3 +300,3 @@ def handler_30(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -310,3 +310,3 @@ def handler_31(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -320,3 +320,3 @@ def handler_32(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -330,3 +330,3 @@ def handler_33(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -340,3 +340,3 @@ def handler_34(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -350,3 +350,3 @@ def handler_35(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -360,3 +360,3 @@ def handler_36(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -370,3 +370,3 @@ def handler_37(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -380,3 +380,3 @@ def handler_38(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -390,3 +390,3 @@ def handler_39(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)
+@@ -400,3 +400,3 @@ def handler_40(request):
+-    logger.info("handling request %s" % request.id)
++    logger.info("handling request %s", request.id)
+     return process(request)

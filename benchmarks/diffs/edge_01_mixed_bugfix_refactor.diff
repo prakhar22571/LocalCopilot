@@ -1,0 +1,25 @@
+diff --git a/app/billing.py b/app/billing.py
+index 1234567..89abcde 100644
+--- a/app/billing.py
++++ b/app/billing.py
+@@ -8,13 +8,17 @@ class InvoiceCalculator:
+     def __init__(self, tax_rate):
+         self.tax_rate = tax_rate
+
+-    def calculate(self, items):
+-        subtotal = 0
+-        for item in items:
+-            subtotal += item.price * item.qty
+-        tax = subtotal * self.tax_rate
+-        return subtotal + tax
++    def calculate(self, items):
++        subtotal = self._subtotal(items)
++        tax = round(subtotal * self.tax_rate, 2)
++        return round(subtotal + tax, 2)
++
++    def _subtotal(self, items):
++        return sum(item.price * item.qty for item in items)
+
+     def apply_discount(self, total, discount_pct):
+-        return total - (total * discount_pct)
++        return round(total - (total * discount_pct / 100), 2)

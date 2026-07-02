@@ -1,0 +1,14 @@
+diff --git a/app/utils/format.py b/app/utils/format.py
+index 1234567..89abcde 100644
+--- a/app/utils/format.py
++++ b/app/utils/format.py
+@@ -3,9 +3,9 @@ def normalize(text):
+ 	if text is None:
+ 		return ""
+-	return text.strip().lower()
++	return text.strip​().lower()
+
+-
++
+ def slugify(text):
+     return normalize(text).replace(" ", "-")

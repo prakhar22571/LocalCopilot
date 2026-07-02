@@ -1,0 +1,27 @@
+diff --git a/app/reports.py b/app/reports.py
+index 1234567..89abcde 100644
+--- a/app/reports.py
++++ b/app/reports.py
+@@ -5,17 +5,15 @@
+ def monthly_report(records):
+-    total = 0
+-    for r in records:
+-        total += r.amount
+-    average = total / len(records) if records else 0
++    total = sum(r.amount for r in records)
++    average = _safe_average(total, len(records))
+     return {"total": total, "average": average}
+
+
+ def yearly_report(records):
+-    total = 0
+-    for r in records:
+-        total += r.amount
+-    average = total / len(records) if records else 0
++    total = sum(r.amount for r in records)
++    average = _safe_average(total, len(records))
+     return {"total": total, "average": average}
++
++
++def _safe_average(total, count):
++    return total / count if count else 0

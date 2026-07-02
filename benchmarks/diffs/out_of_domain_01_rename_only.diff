@@ -1,0 +1,4 @@
+diff --git a/app/utils/strings.py b/app/utils/text.py
+similarity index 100%
+rename from app/utils/strings.py
+rename to app/utils/text.py

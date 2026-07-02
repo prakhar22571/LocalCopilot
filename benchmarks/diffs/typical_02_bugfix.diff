@@ -1,0 +1,9 @@
+diff --git a/app/pagination.py b/app/pagination.py
+index 1234567..89abcde 100644
+--- a/app/pagination.py
++++ b/app/pagination.py
+@@ -12,7 +12,7 @@ def paginate(items, page: int, page_size: int):
+     start = (page - 1) * page_size
+-    end = start + page_size - 1
++    end = start + page_size
+     return items[start:end]

@@ -1,0 +1,18 @@
+diff --git a/README.md b/README.md
+index 1234567..89abcde 100644
+--- a/README.md
++++ b/README.md
+@@ -20,6 +20,12 @@ pip install -r requirements.txt
+
+ Run the server with `uvicorn app.main:app --reload`.
+
++## Configuration
++
++Set the following environment variables before starting the server:
++
++- `DATABASE_URL` - connection string for the primary database
++- `LOG_LEVEL` - one of `debug`, `info`, `warning`, `error` (default: `info`)
++
+ ## Running tests
+
+ Use `pytest` to run the test suite.
