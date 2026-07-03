@@ -1,0 +1,74 @@
+{
+  "name": "local-copilot",
+  "displayName": "Local Copilot - Offline Code Review",
+  "description": "Review git diffs with a local LLM via Ollama. Nothing leaves your machine.",
+  "version": "0.1.0",
+  "publisher": "local-copilot",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other", "Machine Learning"],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "localCopilot.reviewWorkingTree",
+        "title": "Local Copilot: Review Uncommitted Changes",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "localCopilot.reviewStaged",
+        "title": "Local Copilot: Review Staged Changes",
+        "icon": "$(diff-added)"
+      },
+      {
+        "command": "localCopilot.reviewRef",
+        "title": "Local Copilot: Review Diff Against Ref...",
+        "icon": "$(git-commit)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        { "command": "localCopilot.reviewWorkingTree" },
+        { "command": "localCopilot.reviewStaged" },
+        { "command": "localCopilot.reviewRef" }
+      ],
+      "scm/title": [
+        { "command": "localCopilot.reviewWorkingTree", "group": "navigation" }
+      ]
+    },
+    "configuration": {
+      "title": "Local Copilot",
+      "properties": {
+        "localCopilot.serverUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8000",
+          "description": "Base URL of the Local Copilot FastAPI server."
+        },
+        "localCopilot.model": {
+          "type": "string",
+          "default": "granite4:3b",
+          "description": "Ollama model tag to use for reviews."
+        },
+        "localCopilot.temperature": {
+          "type": "number",
+          "default": 0.0,
+          "description": "Sampling temperature. 0 for deterministic reviews."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0",
+    "@vscode/vsce": "^2.24.0"
+  }
+}

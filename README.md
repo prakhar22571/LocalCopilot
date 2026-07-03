@@ -90,6 +90,12 @@ C:\Users\nikhi\development\LocalCopilot\scripts\review-diff.ps1
 The same endpoint works from git hooks or CI on this machine — POST the diff, then gate on
 `review.risk_level` in the JSON response.
 
+### VS Code extension
+
+`vscode-extension/` is a thin TypeScript client — all review logic still runs in this Python
+backend. It captures a diff from the open workspace, POSTs it to the API server, and renders the
+result in a panel. See `vscode-extension/README.md` for setup and packaging.
+
 ## Project structure
 
 ```

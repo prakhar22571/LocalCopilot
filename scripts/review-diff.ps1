@@ -15,7 +15,11 @@ param(
 
 $diffArgs = @("-C", $Repo, "diff")
 if ($Staged) { $diffArgs += "--staged" } else { $diffArgs += $GitRef }
-$diff = (git @diffArgs | Out-String)
+
+# git emits UTF-8; decode it as such regardless of the console's code page
+$prevEnc = [Console]::OutputEncoding
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+try { $diff = (git @diffArgs | Out-String) } finally { [Console]::OutputEncoding = $prevEnc }
 
 if (-not $diff.Trim()) {
     Write-Error "No diff found in '$Repo' (ref: $(if ($Staged) { '--staged' } else { $GitRef }))."
@@ -25,9 +29,12 @@ if (-not $diff.Trim()) {
 $payload = @{ diff = $diff }
 if ($Model) { $payload.model = $Model }
 
+# Send explicit UTF-8 bytes: Invoke-RestMethod encodes string bodies as Latin-1,
+# which corrupts any non-ASCII character in the diff and the server rejects the JSON
+$bodyBytes = [System.Text.Encoding]::UTF8.GetBytes(($payload | ConvertTo-Json -Compress))
 try {
-    $resp = Invoke-RestMethod -Uri "$Server/review" -Method Post -ContentType 'application/json' `
-        -Body ($payload | ConvertTo-Json -Compress) -TimeoutSec 300
+    $resp = Invoke-RestMethod -Uri "$Server/review" -Method Post -ContentType 'application/json; charset=utf-8' `
+        -Body $bodyBytes -TimeoutSec 300
 } catch {
     Write-Error "Review request failed: $($_.Exception.Message). Is the server running? Start it with: uvicorn app.api:app"
     exit 1
