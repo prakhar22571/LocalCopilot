@@ -1,4 +1,4 @@
-# Local Copilot — Offline Code Review Assistant
+# Local Copilot - Offline Code Review Assistant
 
 ## The problem
 
